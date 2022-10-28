@@ -9,7 +9,7 @@ const Footer = () => {
      {new Date().getFullYear()}
       <span> Shopper </span>
     </h5>   
-    <h5> All Rights Reserved </h5>
+    <h5> All Rights Reserved@2022 </h5>
   </Wrapper>
 }
 

@@ -34,42 +34,41 @@ const SingleProductPage = () => {
     return <Error type='single-product' />;
   }
 
-  const { name, price, description, stock, stars, reviews, id: sku, company, images } = product;
+  const { name, price, description, stock, stars, reviews, id: sku, company, image } = product;
 
   return (
-    <Wrapper>
-      <PageHero title={name} product />
-      <div className='section section-center page'>
-        <Link to='/products' className='btn'>
-          back to products
-        </Link>
-        <div className='product-center'>
-          <ProductImages images={images} />
-          <section className='content'>
-            <h2>{name}</h2>
-            <Stars stars={stars} reviews={reviews} />
-            <h5 className='price'>{formatPrice(price)}</h5>
-            <p className='desc'>{description}</p>
-            <p className='info'>
-              <span>Availability : </span>
-              {stock > 0 ? `In Stock (${stock})` : 'out of stock'}
-            </p>
+      <Wrapper>
+        <PageHero title={name} product />
+        <div className='section section-center page'>
+          <Link to='/products' className='btn'>
+            back to products
+          </Link>
+          <div className='product-center'>
+            <ProductImages image={image} />
+            <section className='content'>
+              <h2>{name}</h2>
+              <Stars stars={stars} reviews={reviews} />
+              <h5 className='price'>{formatPrice(price)}</h5>
+              <p className='desc display-linebreak'>{description}</p>
+              <p className='info'>
+                <span>Availability : </span>
+                {stock > 0 ? `In Stock (${stock})` : 'out of stock'}
+              </p>
+              <p className='info'>
+                <span>SKU : </span>
+                {sku}
+              </p>
 
-            <p className='info'>
-              <span>SKU : </span>
-              {sku}
-            </p>
-
-            <p className='info'>
-              <span>Brand : </span>
-              {company}
-            </p>
-            <hr />
-            {stock > 0 && <AddToCart product={product} />}
-          </section>
+              <p className='info'>
+                <span>Brand : </span>
+                {company}
+              </p>
+              <hr />
+              {stock > 0 && <AddToCart product={product} />}
+            </section>
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
   );
 };
 
@@ -81,6 +80,9 @@ const Wrapper = styled.main`
   }
   .price {
     color: var(--clr-primary-5);
+  }
+  .display-linebreak {
+    white-space: pre-line;
   }
   .desc {
     line-height: 2;

@@ -1,76 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../assets/logo.svg';
-// import { FaBars } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-// import { links } from '../utils/constants';
-// import CartButtons from './CartButtons';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import LoginIcon from '@mui/icons-material/Login';
-// import { useProductsContext } from '../context/products_context';
-// import { useUserContext } from '../context/user_context';
-
-
+import { links } from '../utils/constants';
+import CartButtons from './CartButtons';
+import { useProductsContext } from '../context/products_context';
+import { useUserContext } from '../context/user_context';
 
 const Nav = () => {
-  // const { openSidebar } = useProductsContext();
-  // const { myUser } = useUserContext();
-  
-  const links_hk = [
-    {
-      id: 1,
-      text: 'home',
-      url: '/',
-    },
-    {
-      id: 2,
-      text: 'products',
-      url: '/products',
-    },
-    {
-      id: 3,
-      text: 'about',
-      url: '/about',
-    },
-  ]
-
-
+  const { openSidebar } = useProductsContext();
+  const { myUser } = useUserContext();
 
   return (
-    <NavContainer>
-      <div className='nav-center'>
-
-        <div className='nav-header'>
-          <Link to='/'>
-            <img src={logo} alt='shopper' />
-          </Link>
-
-          {/* <button type='button' className='nav-toggle'>
-            <FaBars />
-          </button> */}
-          
+      <NavContainer>
+        <div className='nav-center'>
+          <div className='nav-header'>
+            <Link to='/'>
+              <img src={logo} alt='comfy sloth' />
+            </Link>
+            <button type='button' className='nav-toggle' onClick={openSidebar}>
+              <FaBars />
+            </button>
+          </div>
+          <ul className='nav-links'>
+            {links.map((link) => {
+              const { id, text, url } = link;
+              return (
+                  <li key={id}>
+                    <Link to={url}>{text}</Link>
+                  </li>
+              );
+            })}
+            {myUser && (
+                <li>
+                  <Link to='/checkout'>checkout</Link>
+                </li>
+            )}
+          </ul>
+          <CartButtons />
         </div>
-        <ul className='nav-links'>
-         
-          {links_hk.map((link) => {
-            const { id, text, url } = link;
-            return (
-              <li key={id}>
-                <Link to={url}>{text}</Link>
-              </li>
-            );
-          })}
-    
-        </ul>
-        {/* <CartButtons /> */}
-        <div className='loginstyle'>
-        <AddShoppingCartIcon/>
-        <h4 className='loginstyle'>Cart</h4>
-        <LoginIcon/>
-        <h4 className='loginstyle'>Login</h4>
-        </div>
-      </div>
-    </NavContainer>
+      </NavContainer>
   );
 };
 
@@ -84,14 +54,6 @@ const NavContainer = styled.nav`
     width: 90vw;
     margin: 0 auto;
     max-width: var(--max-width);
-  }
-  .loginstyle{
-    width:12vw;
-    display: flex;
-    justify-content: space-between;
-    align items:center;  
-    margin:auto;
-    padding:auto;
   }
   .nav-header {
     display: flex;
@@ -143,9 +105,6 @@ const NavContainer = styled.nav`
           border-top: 1px solid var(--clr-primary-7);
         }
       }
-    }
-    h4{
-      font-family: "Times New Roman", Times, serif;
     }
     .cart-btn-wrapper {
       display: grid;
