@@ -1,7 +1,6 @@
-Guided Project From John Smilga's Course On Udemy
-### Additions: <br>
-Sign-up / Sign-in - Auth0 API <br>
-Credit Card - Stripe API <br>
+Group No- 37
 
-### Live Site
-https://idanref-ecommerce.netlify.app
+
+Install Packages Using : npm i react-scripts
+run command : npx json-server -p 3001 -w data/db.json
+run command : npm start
