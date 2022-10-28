@@ -15,7 +15,7 @@ const initialState = {
   cart: getLocalStorage(),
   total_items: 0,
   total_amount: 0,
-  shipping_fee: 534,
+  shipping_fee: 50,
 };
 
 const CartContext = React.createContext();
@@ -23,22 +23,22 @@ const CartContext = React.createContext();
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // add to cart
+
   const addToCart = (id, color, amount, product) => {
     dispatch({ type: ADD_TO_CART, payload: { id, color, amount, product } });
   };
 
-  // remove item
+
   const removeItem = (id) => {
     dispatch({ type: REMOVE_CART_ITEM, payload: id });
   };
 
-  // toogle ammount
+
   const toggleAmount = (id, value) => {
     dispatch({ type: TOGGLE_CART_ITEM_AMOUNT, payload: { id, value } });
   };
 
-  // clear cart
+
   const clearCart = () => {
     dispatch({ type: CLEAR_CART });
   };

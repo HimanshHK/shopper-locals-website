@@ -47,7 +47,7 @@ const SingleProductPage = () => {
             <ProductImages image={image} />
             <section className='content'>
               <h2>{name}</h2>
-              <Stars stars={stars} reviews={reviews} />
+              <Stars stars={(Math.random() * 5)+1} reviews={Math.floor(Math.random()*200)+1} />
               <h5 className='price'>{formatPrice(price)}</h5>
               <p className='desc display-linebreak'>{description}</p>
               <p className='info'>
