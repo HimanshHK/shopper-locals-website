@@ -13,7 +13,7 @@ const ListView = ({ products }) => {
                 <div>
                   <h4>{name}</h4>
                   <h5 className='price'>{formatPrice(price)}</h5>
-                  <p>{description.substring(0, 150)}...</p>
+                  <p className='des'> {description}</p>
                   <Link to={`/products/${id}`} className='btn'>
                     Details
                   </Link>
@@ -28,13 +28,16 @@ const ListView = ({ products }) => {
 const Wrapper = styled.section`
   display: grid;
   row-gap: 3rem;
-
+ .des{
+   white-space:nowrap;
+   overflow:hidden;
+ }
   img {
-    width: 100%;
+    
     display: block;
     width: 300px;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: var(--radius);
     margin-bottom: 1rem;
   }
