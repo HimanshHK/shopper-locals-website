@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Contact = () => {
   return <Wrapper>
     <div className="section-center">
-      <h3>Join our newsletter and get 20% off</h3>
+      <h3>Join our email-services and get latest updates about new products</h3>
       <div className="content">
         <p>E-commerce trends for 2021 showed new shopping habits, a rise in marketplaces, a growing delivery market, and marketing automation, among other opportunities.</p>
         
@@ -43,7 +43,7 @@ const Wrapper = styled.section`
   .submit-btn {
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    border: 2px solid var(--clr-black);
+    border: 2px solid var(--clr-primary-8);
   }
   .form-input {
     border-right: none;

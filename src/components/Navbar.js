@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { links } from '../utils/constants';
@@ -17,7 +17,7 @@ const Nav = () => {
         <div className='nav-center'>
           <div className='nav-header'>
             <Link to='/'>
-              <img src={logo} alt='comfy sloth' />
+              <img src={logo} alt='shopper' />
             </Link>
             <button type='button' className='nav-toggle' onClick={openSidebar}>
               <FaBars />
@@ -101,8 +101,8 @@ const NavContainer = styled.nav`
         letter-spacing: var(--spacing);
         padding: 0.5rem;
         &:hover {
-          border-bottom: 1px solid var(--clr-primary-7);
-          border-top: 1px solid var(--clr-primary-7);
+          border-bottom: 1px solid var(--clr-primary-5);
+          border-top: 1px solid var(--clr-primary-5);
         }
       }
     }

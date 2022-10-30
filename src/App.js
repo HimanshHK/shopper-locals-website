@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Navbar, Sidebar, Footer } from './components';
 
 import { Home, SingleProduct, Cart, Checkout, Error, About, Products, PrivateRoute, AuthWrapper } from './pages';
+import AddProduct from "./pages/AddProduct";
+import Confirm from "./pages/Confirm";
 
 function App() {
   return (
@@ -25,7 +27,10 @@ function App() {
           <Route exact path='/products'>
             <Products />
           </Route>
-
+          <Route exact path='/addproduct'>
+            <AddProduct/>
+          </Route>
+        <Route exact path='/confirm'><Confirm/></Route>
           <Route exact path='/products/:id' children={<SingleProduct />} />
 
           <PrivateRoute exact path='/checkout'>

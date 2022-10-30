@@ -2,12 +2,12 @@ import { ADD_TO_CART, CLEAR_CART, COUNT_CART_TOTALS, REMOVE_CART_ITEM, TOGGLE_CA
 
 const cart_reducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
-    const { id, color, amount, product } = action.payload;
-    const tempItem = state.cart.find((i) => i.id === id + color);
+    const { id, amount, product } = action.payload;
+    const tempItem = state.cart.find((i) => i.id === id );
 
     if (tempItem) {
       const tempCart = state.cart.map((cartItem) => {
-        if (cartItem.id === id + color) {
+        if (cartItem.id === id ) {
           let newAmount = cartItem.amount + amount;
           if (newAmount > cartItem.max) {
             newAmount = cartItem.max;
@@ -22,10 +22,10 @@ const cart_reducer = (state, action) => {
       return { ...state, cart: tempCart };
     } else {
       const newItem = {
-        id: id + color,
+        id: id ,
         name: product.name,
-        color,
         amount,
+        company:product.company,
         image: product.image,
         price: product.price,
         max: product.stock,

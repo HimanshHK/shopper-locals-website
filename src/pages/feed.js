@@ -1,0 +1,126 @@
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { PageHero } from '../components';
+import Confirm from "./Confirm";
+
+
+
+
+
+
+const Feed = () => {
+    const [inputs, setInputs] = useState({});
+
+    const [submitted,setSubmitted]= useState(false);
+    const handleChange = (event) => {
+
+        const name = event.target.name;
+        const value = event.target.value;
+
+
+        setInputs((values) => ({ ...values, [name]: value }));
+        // setInputs((values) => ({ ...values, [name]: value }));
+
+
+    };
+
+    const handleSubmit = (event) => {
+        setSubmitted(true)
+        return fetch('http://localhost:3001/feeds', {
+            method: 'POST',
+            body: JSON.stringify(inputs),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+        // eslint-disable-next-line no-unreachable
+
+    };
+    if(submitted===false) {
+        return (
+            <Wrapper>
+                <form onSubmit={handleSubmit} className="add">
+                    <div className='form-item'>
+                        <label>Name</label>
+                        <input name="id" value={inputs.id} required onChange={handleChange}/>
+                    </div>
+                    <div className='form-item'>
+                        <label>E-mail</label>
+                        <input name="mail" type='email' value={inputs.mail} required onChange={handleChange}/>
+                    </div>
+
+                    <div className='form-item'>
+                        <label>Message </label>
+                        <textarea
+                            name="msg"
+                            value={inputs.msg}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <input type="submit" value="Send Message" className='submit'
+                    />
+                </form>
+            </Wrapper>
+        );
+    }
+    else{
+        return (<Confirm comp='message'/>)
+    }
+};
+
+
+const Wrapper = styled.section`
+  
+  
+  .add{
+    margin-left:  25%;
+    width: 50%;
+  }
+  .form-item input{
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--clr-primary-5);
+    margin-bottom: 30px;
+    border: 2px solid #DADDEC;
+    border-radius: 10px;
+    
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+    
+  }
+  .form-item label{
+    position: relative;
+    left: 0;
+    box-sizing: border-box;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--clr-primary-10);
+    pointer-events:none;
+    transition: 0.5s;
+  }
+  .submit{
+    color: var(--clr-primary-10);
+    background: var(--clr-primary-5);
+    padding: 10px 0;
+    border-radius: 20px;
+    margin: 0 0 10% 40%;
+  }
+  textarea{
+    width:100%;
+    height: 100px;
+    border: 2px solid #DADDEC;
+    border-radius: 10px;
+
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  }
+`;
+export default Feed;

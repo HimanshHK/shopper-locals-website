@@ -1,11 +1,27 @@
 {
+  "feeds": [
+    {
+      "id": "647",
+      "mail": "mrsm492002@gmail.com",
+      "msg": "dfrg"
+    },
+    {
+      "id": "6969",
+      "mail": "mrsm492002@gmail.com",
+      "msg": "fghhhhhn gbtr"
+    },
+    {
+      "id": "Sachin Meena",
+      "mail": "mrsm492002@gmail.com",
+      "msg": "I like it so much"
+    }
+  ],
   "data": [
     {
       "id": "recZkNf2kwmdBcqd0",
       "name": "amul butter",
       "price": 560,
       "image": "https://live.staticflickr.com/65535/52457402092_2081af1f28_z.jpg",
-
       "company": "amul",
       "description": "Spread on Bread, Parantha, Roti, Nans, Sandwiches \n Toppings : Pav Bhaji, Dals, Soups, Salads, Rice \n Cooking Medium : Butter Paneer Masala, Butter Corn Masala and thousands of delightful recipes",
       "category": "dairy",
@@ -828,12 +844,42 @@
       "featured": true
     },
     {
-      "id": "124",
-      "name": "Saras",
-      "price": "120",
+      "id": "35",
+      "name": "Paras Ghee",
+      "price": 120,
       "image": "https://live.staticflickr.com/65535/52457924486_4f0dc85540_z.jpg",
       "category": "dairy",
-      "description":"hrllo"
+      "company": "Flipkart",
+      "stock": 23
+    },
+    {
+      "id": "34",
+      "name": "Paras Ghee",
+      "price": 120,
+      "image": "https://live.staticflickr.com/65535/52457924486_4f0dc85540_z.jpg",
+      "category": "dairy",
+      "company": "Flipkart",
+      "stock": 21
+    },
+    {
+      "id": "6678",
+      "name": "weeed",
+      "price": 120,
+      "description": "Real weed",
+      "image": "https://live.staticflickr.com/65535/52457924486_4f0dc85540_z.jpg",
+      "category": "ka",
+      "company": "Flipkart",
+      "stock": 23
+    },
+    {
+      "id": "899",
+      "name": "Weed",
+      "price": 345,
+      "description": "Real weed",
+      "image": "https://live.staticflickr.com/65535/52457924486_4f0dc85540_z.jpg",
+      "category": "dgf",
+      "company": "Flipkart",
+      "stock": 23
     }
   ]
 }
