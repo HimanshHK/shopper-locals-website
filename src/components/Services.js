@@ -56,7 +56,7 @@ const Services = () => {
 const Wrapper = styled.section`
   h3,
   h4 {
-    color: var(--clr-primary-5);
+    color: var(--clr-primary-1);
   }
   padding: 5rem 0;
 
@@ -68,7 +68,7 @@ const Wrapper = styled.section`
   p {
     margin-bottom: 0;
     line-height: 1.8;
-    color: var(--clr-primary);
+    color: var(--clr-primary-3);
   }
   .services-center {
     margin-top: 4rem;

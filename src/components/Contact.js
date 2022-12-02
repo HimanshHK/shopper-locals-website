@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Contact = () => {
   return <Wrapper>
     <div className="section-center">
-      <h3>Join our email-services and get latest updates about new products</h3>
+      <h3>Join our newsletter and get 20% off</h3>
       <div className="content">
         <p>E-commerce trends for 2021 showed new shopping habits, a rise in marketplaces, a growing delivery market, and marketing automation, among other opportunities.</p>
         
@@ -33,17 +33,19 @@ const Wrapper = styled.section`
     color: var(--clr-grey-5);
   }
   .contact-form {
-    width: 90vw;
+    width: 100vw;
+    justify-content:space-between;
     max-width: 500px;
     display: grid;
     grid-template-columns: 1fr auto;
+    color:black;
   }
 
   .form-input,
   .submit-btn {
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    border: 2px solid var(--clr-primary-8);
+    border: 2px solid var(--clr-black);
   }
   .form-input {
     border-right: none;
@@ -60,6 +62,10 @@ const Wrapper = styled.section`
     text-transform: capitalize;
   }
   .submit-btn {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     background: var(--clr-primary-5);
     text-transform: capitalize;
     letter-spacing: var(--spacing);

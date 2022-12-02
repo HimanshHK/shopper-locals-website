@@ -14,11 +14,13 @@ const AddProduct = () => {
     const handleChange = (event) => {
 
         const name = event.target.name;
+        // const value=null;
+        // if(event.target.name==='color')
+        //     value="#fff";
         const value = (event.target.name==='price'||event.target.name==='stock')?parseInt(event.target.value):event.target.value;
-
-
+        
+    
         setInputs((values) => ({ ...values, [name]: value }));
-        // setInputs((values) => ({ ...values, [name]: value }));
 
 
     };
@@ -34,25 +36,29 @@ const AddProduct = () => {
         })
             .then((res) => res.json())
             .then((data) => console.log(data));
-        // eslint-disable-next-line no-unreachable
+        
 
     };
     if(submitted===false) {
         return (
             <Wrapper>
 
+
                 <PageHero title="add product"/>
+                
+                
                 <form onSubmit={handleSubmit} className="add">
+                <div className="headingid"><h2 >Let's Add a new Product</h2></div>
                     <div className='form-item'>
-                        <label>ID</label>
+                        <label className="labelid">ID</label>
                         <input name="id" value={inputs.id} required onChange={handleChange}/>
                     </div>
                     <div className='form-item'>
-                        <label>Name</label>
+                        <label className="labelid">Name</label>
                         <input name="name" value={inputs.name} required onChange={handleChange}/>
                     </div>
                     <div className='form-item'>
-                        <label>Price</label>
+                        <label className="labelid">Price</label>
                         <input
                             name="price"
                             value={inputs.price}
@@ -62,12 +68,12 @@ const AddProduct = () => {
                         />
                     </div>
                     <div className='form-item'>
-                        <label>Description</label>
+                        <label className="labelid">Description</label>
                         <input name="description" value={inputs.description} required onChange={handleChange}
                                aria-expanded/>
                     </div>
                     <div className='form-item'>
-                        <label>Image</label>
+                        <label className="labelid">Image</label>
                         <input
                             name="image"
                             value={inputs.image}
@@ -76,7 +82,7 @@ const AddProduct = () => {
                         />
                     </div>
                     <div className='form-item'>
-                        <label>Category</label>
+                        <label className="labelid">Category</label>
                         <input
                             name="category"
                             value={inputs.category}
@@ -84,7 +90,7 @@ const AddProduct = () => {
                         />
                     </div>
                     <div className='form-item'>
-                        <label>Company</label>
+                        <label className="labelid">Company</label>
                         <input
                             name="company"
                             value={inputs.brand}
@@ -92,7 +98,7 @@ const AddProduct = () => {
                         />
                     </div>
                     <div className='form-item'>
-                        <label>Stocks</label>
+                        <label className="labelid">Stocks</label>
                         <input
                             name="stock"
                             value={inputs.stock}
@@ -100,6 +106,14 @@ const AddProduct = () => {
                             onChange={handleChange}
                         />
                     </div>
+                    {/* <div className='form-item-1'>
+                        <label>Color</label>
+                        <input
+                            name="stock"
+                            value={inputs.color}
+                            onChange={handleChange}
+                        />
+                    </div> */}
                     <input type="submit" value="Upload Product" className='submit'
                     />
                 </form>
@@ -113,8 +127,15 @@ const AddProduct = () => {
 
 
 const Wrapper = styled.section`
+
   
-  
+  .headingid{
+    color:black;
+    align-items:center;
+    justify-content:space-between;
+    padding:25px;
+    margin:20px 50px;
+  }
   .add{
     margin-left:  25%;
     width: 50%;
@@ -142,7 +163,7 @@ const Wrapper = styled.section`
     box-sizing: border-box;
     padding: 10px 0;
     font-size: 16px;
-    color: var(--clr-primary-10);
+    color: var(--clr-primary-5);
     pointer-events:none;
     transition: 0.5s;
   }
@@ -150,8 +171,10 @@ const Wrapper = styled.section`
     color: var(--clr-primary-10);
     background: var(--clr-primary-5);
     padding: 10px 0;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 0 0 10% 40%;
+    width:150px;
+    border-color:white;
   }
 `;
 export default AddProduct;

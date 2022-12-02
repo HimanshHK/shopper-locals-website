@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatPrice } from '../utils/helpers'
+// import { formatPrice } from '../utils/helpers'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
@@ -15,7 +15,7 @@ const Product = ({image, name, price, id}) => {
 
     <footer>
       <h5>{name}</h5>
-      <p>{formatPrice(price)}</p>
+      <p>₹{price}</p>
     </footer>
   </Wrapper>
 }
@@ -26,6 +26,7 @@ const Wrapper = styled.article`
     background: var(--clr-black);
     border-radius: var(--radius);
   }
+
   img {
     width: 100%;
     display: block;
@@ -33,6 +34,7 @@ const Wrapper = styled.article`
     border-radius: var(--radius);
     transition: var(--transition);
   }
+  
   .link {
     position: absolute;
     top: 50%;
@@ -59,6 +61,7 @@ const Wrapper = styled.article`
   .container:hover .link {
     opacity: 1;
   }
+  
   footer {
     margin-top: 1rem;
     display: flex;

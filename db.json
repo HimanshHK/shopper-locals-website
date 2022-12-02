@@ -1,19 +1,66 @@
 {
+  "users": [
+    {
+      "name": "himanshuhk01",
+      "mobile": "9467234789",
+      "email": "himanshuhkofficial2@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "name": "hi_manshuhk",
+      "mobile": "9996575659",
+      "email": "himanshu.h20@iiits.in",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "name": "shivam",
+      "mobile": "9966890065",
+      "email": "himanshuhkcoding@gmail.com",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "name": "hiamsnhuhk",
+      "mobile": "9878788797",
+      "email": "hk@gmail.com",
+      "password": "fgg",
+      "id": 4
+    },
+    {
+      "name": "himanshuhk01",
+      "mobile": "8834",
+      "email": "himanshuhkofficial2@gmail.com",
+      "password": "34",
+      "id": 5
+    }
+  ],
   "feeds": [
     {
-      "id": "647",
-      "mail": "mrsm492002@gmail.com",
-      "msg": "dfrg"
+      "id": "Supriya Jain",
+      "mail": "himanshuhkcoding@gmail.com",
+      "msg": "The website is so good. Its has all the products that a person needs in daily life. "
     },
     {
-      "id": "6969",
-      "mail": "mrsm492002@gmail.com",
-      "msg": "fghhhhhn gbtr"
+      "id": "Sachin Tendulkar",
+      "mail": "sachin2022@gmail.com",
+      "msg": "The website is helping the consumers and vendors a lot. Best of luck to the makers."
     },
     {
-      "id": "Sachin Meena",
-      "mail": "mrsm492002@gmail.com",
-      "msg": "I like it so much"
+      "id": "Vikyath",
+      "mail": "viky@gmail.com",
+      "msg": "Nice Website!!!!!!"
+    },
+    {
+      "id": "Mohit",
+      "mail": "mohit44@gmail.com",
+      "msg": "Quite Relatable^-^"
+    },
+    {
+      "id": "Himanshu",
+      "mail": "gha@gmail.com",
+      "msg": "something"
     }
   ],
   "data": [
@@ -844,41 +891,61 @@
       "featured": true
     },
     {
-      "id": "35",
-      "name": "Paras Ghee",
-      "price": 120,
+      "id": "124",
+      "name": "Saras",
+      "price": "120",
       "image": "https://live.staticflickr.com/65535/52457924486_4f0dc85540_z.jpg",
       "category": "dairy",
-      "company": "Flipkart",
+      "description": "hrllo"
+    },
+    {
+      "id": "himanshu223",
+      "name": "himanshuhk01",
+      "price": 23232,
+      "description": "323",
+      "image": "3232",
+      "category": "323232",
+      "company": "hk oils pvt ltd",
+      "stock": 2323232
+    },
+    {
+      "id": "sav",
+      "name": "wda",
+      "price": 222,
+      "description": "222",
+      "image": "222",
+      "category": "222",
+      "company": "222",
+      "stock": 222
+    },
+    {
+      "id": "22",
+      "name": "chola",
+      "price": 222,
+      "description": "323",
+      "image": "222",
+      "category": "sxs",
+      "company": "sxsx",
       "stock": 23
     },
     {
-      "id": "34",
-      "name": "Paras Ghee",
-      "price": 120,
-      "image": "https://live.staticflickr.com/65535/52457924486_4f0dc85540_z.jpg",
-      "category": "dairy",
-      "company": "Flipkart",
-      "stock": 21
+      "id": "222",
+      "name": "22222",
+      "price": 222,
+      "description": "222",
+      "image": "222",
+      "category": "222",
+      "company": "222",
+      "stock": 222
     },
     {
-      "id": "6678",
-      "name": "weeed",
-      "price": 120,
-      "description": "Real weed",
-      "image": "https://live.staticflickr.com/65535/52457924486_4f0dc85540_z.jpg",
-      "category": "ka",
-      "company": "Flipkart",
-      "stock": 23
-    },
-    {
-      "id": "899",
-      "name": "Weed",
-      "price": 345,
-      "description": "Real weed",
-      "image": "https://live.staticflickr.com/65535/52457924486_4f0dc85540_z.jpg",
-      "category": "dgf",
-      "company": "Flipkart",
+      "id": "123",
+      "name": "bikaji cakes",
+      "price": 220,
+      "description": "ghathsh",
+      "image": "fijhbbxhbs",
+      "category": "staples",
+      "company": "hk oils pvt ltd",
       "stock": 23
     }
   ]

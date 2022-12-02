@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { useProductsContext } from '../context/products_context';
 import { useCartContext } from '../context/cart_context';
 import { useUserContext } from '../context/user_context';
+// import Modal from './login/Modal'
 
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
@@ -20,7 +21,7 @@ const CartButtons = () => {
           <span className="cart-value">{total_items}</span>
         </span>
         </Link>
-        {myUser ? (
+        {/* {myUser ? (
             <button
                 type="button"
                 className="auth-btn"
@@ -32,10 +33,19 @@ const CartButtons = () => {
               Logout <FaUserMinus />
             </button>
         ) : (
-            <button type="button" className="auth-btn" onClick={loginWithRedirect}>
+            <button type="button" className="auth-btn">
               Login <FaUserPlus />
             </button>
-        )}
+        )} */}
+        <Link to="/login" className="cart-btn">
+          Login
+          <span className="cart-container">
+          <FaUserPlus />
+          
+        </span>
+        </Link>
+
+
       </Wrapper>
   );
 };
@@ -50,7 +60,7 @@ const Wrapper = styled.div`
     color: var(--clr-grey-1);
     font-size: 1.5rem;
     letter-spacing: var(--spacing);
-    //color: var(--clr-grey-1);
+    color: var(--clr-grey-1);
     display: flex;
 
     align-items: center;

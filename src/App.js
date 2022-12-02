@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Navbar, Sidebar, Footer } from './components';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 import { Home, SingleProduct, Cart, Checkout, Error, About, Products, PrivateRoute, AuthWrapper } from './pages';
 import AddProduct from "./pages/AddProduct";
-import Confirm from "./pages/Confirm";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Router>
         
         <Navbar />
-         <Sidebar />
+          <Sidebar />
         
         <Switch>
           <Route exact path='/'>
@@ -30,12 +31,19 @@ function App() {
           <Route exact path='/addproduct'>
             <AddProduct/>
           </Route>
-        <Route exact path='/confirm'><Confirm/></Route>
+          <Route exact path='/login'>
+            <SignIn/>
+          </Route>
+          <Route exact path='/signin'>
+            <SignUp/>
+          </Route>
+
           <Route exact path='/products/:id' children={<SingleProduct />} />
 
-          <PrivateRoute exact path='/checkout'>
+          {/* <PrivateRoute exact path='/checkout'>
             <Checkout />
-          </PrivateRoute>
+          </PrivateRoute> */}
+          
           <Route path='*'>
             <Error />
           </Route>

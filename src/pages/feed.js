@@ -13,15 +13,9 @@ const Feed = () => {
 
     const [submitted,setSubmitted]= useState(false);
     const handleChange = (event) => {
-
         const name = event.target.name;
         const value = event.target.value;
-
-
         setInputs((values) => ({ ...values, [name]: value }));
-        // setInputs((values) => ({ ...values, [name]: value }));
-
-
     };
 
     const handleSubmit = (event) => {
@@ -35,12 +29,14 @@ const Feed = () => {
         })
             .then((res) => res.json())
             .then((data) => console.log(data));
-        // eslint-disable-next-line no-unreachable
+    
 
     };
     if(submitted===false) {
         return (
             <Wrapper>
+                {/* <div className='divider'></div> */}
+                <h3 className='head'>Let's Have a feedback</h3>
                 <form onSubmit={handleSubmit} className="add">
                     <div className='form-item'>
                         <label>Name</label>
@@ -53,7 +49,7 @@ const Feed = () => {
 
                     <div className='form-item'>
                         <label>Message </label>
-                        <textarea
+                        <input
                             name="msg"
                             value={inputs.msg}
                             onChange={handleChange}
@@ -72,8 +68,14 @@ const Feed = () => {
 
 
 const Wrapper = styled.section`
-  
-  
+  .divider{
+    border-top: 3px solid #bbb;
+  }
+  .head{
+    margin: 30px 580px;
+    margin-top:100px;
+    width: 50%;
+  }
   .add{
     margin-left:  25%;
     width: 50%;
@@ -100,7 +102,7 @@ const Wrapper = styled.section`
     box-sizing: border-box;
     padding: 10px 0;
     font-size: 16px;
-    color: var(--clr-primary-10);
+    color: var(--clr-primary-1);
     pointer-events:none;
     transition: 0.5s;
   }
@@ -108,8 +110,10 @@ const Wrapper = styled.section`
     color: var(--clr-primary-10);
     background: var(--clr-primary-5);
     padding: 10px 0;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 0 0 10% 40%;
+    width:150px;
+    border-color:white;
   }
   textarea{
     width:100%;

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { formatPrice } from '../utils/helpers';
+// import { formatPrice } from '../utils/helpers';
 import { Link } from 'react-router-dom';
+
 const ListView = ({ products }) => {
   return (
       <Wrapper>
@@ -12,7 +13,7 @@ const ListView = ({ products }) => {
                 <img src={image} alt={name} />
                 <div>
                   <h4>{name}</h4>
-                  <h5 className='price'>{formatPrice(price)}</h5>
+                  <h5 className='price'>₹{price}</h5>
                   <p className='des'> {description}</p>
                   <Link to={`/products/${id}`} className='btn'>
                     Details

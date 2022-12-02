@@ -11,7 +11,6 @@ const HomePage = () => {
     <Services />
     <Contact />
     <Feeds/>
-    <Feed/>
   </main>
 }
 

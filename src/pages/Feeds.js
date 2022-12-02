@@ -2,8 +2,8 @@ import React, {useEffect,  useState} from 'react';
 import styled from 'styled-components';
 import 'react-icons/fa'
 import axios from "axios";
-import {FaUserCircle} from "react-icons/all";
-
+import PersonIcon from '@mui/icons-material/Person';
+import Feed from './feed'
 
 
 const Feeds = () => {
@@ -17,10 +17,11 @@ const Feeds = () => {
                 setData(response.data)
             })
     })
-    return(
-        <Wrapper>
-            <div className='test1'><h1>What users say about us!
 
+    return(
+      
+        <Wrapper>
+            <div className='test1'><h1>What our User Says
             </h1></div>
             <div className="testimonial-box-container">
             {/*{loading ? (*/}
@@ -28,18 +29,19 @@ const Feeds = () => {
             {/*) : error ? (*/}
             {/*    <div>{error}</div>*/}
             {/*) : (*/}
+
                 { (
                 data.map((msg) => (
                         <div className="testimonial-box">
                             <div className="box-top">
                                 <div className="profile">
                                     <div className="profile-img">
-                                        <FaUserCircle className='icon'/>
+                                        <PersonIcon className='icon'/>
                                     </div>
 
                                     <div className="name-user">
                                         <strong>{msg.id}</strong>
-                                        <span>@{msg.id}</span>
+                                        <span>@{msg.mail}</span>
                                     </div>
                                 </div>
 
@@ -48,31 +50,45 @@ const Feeds = () => {
                             <div className="client-comment">
                                 <p>{msg.msg}</p>
                             </div>
+                            
                         </div>
+                        
 
                 ))
             )}
+            
         </div>
+        <Feed/>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.section`
+background-color:var(--clr-grey-10);
+
+padding:10px;
+
 
   .test1 {
     display: flex;
     letter-spacing: 1px;
-    margin: 10px 25% 0 25%;
-    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 50%;
+    margin-top:30px;
+    margin-bottom:30px;
 
-    align-content: center;
 
     h1 {
       font-size: 2.2rem;
       font-weight: 500;
-      background-color: var(--clr-primary-5);
-      color: var(--clr-primary-10);
+      background-color: var(--clr-primary-4);
+      color: white;
       padding: 10px 20px;
+      border-radius:10px;
 
     }
   }
@@ -84,15 +100,18 @@ const Wrapper = styled.section`
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
+    border-radius:10px;
   }
 
   .testimonial-box {
     width: 500px;
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
-    background-color: var(--clr-primary-7);
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--clr-primary-2);
+    background-color:white;
     padding: 20px;
     margin: 15px;
     cursor: pointer;
+    border-radius:10px;
   }
 
   .profile-img {
@@ -107,6 +126,7 @@ const Wrapper = styled.section`
     height: 100%;
     object-fit: contain;
     object-position: center;
+    color:black;
   }
 
   .profile {
@@ -120,14 +140,15 @@ const Wrapper = styled.section`
   }
 
   .name-user strong {
-    color: #3d3d3d;
+    color: var(--clr-primary-2);
     font-size: 1.1rem;
     letter-spacing: 0.5px;
   }
 
   .name-user span {
-    color: #979797;
+    color: var(--clr-primary-6);
     font-size: 0.8rem;
+    font-style:bold;
   }
 
 
@@ -140,7 +161,7 @@ const Wrapper = styled.section`
 
   .client-comment p {
     font-size: 0.9rem;
-    color: #4b4b4b;
+    color: var(--clr-primary-1);
   }
 
   .testimonial-box:hover {

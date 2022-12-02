@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
+// import heroBcg from '../assets/banner.ivef'
+// import heroBcg2 from '../assets/hero-bcg-2.jpeg'
 
 const Hero = () => {
   return <Wrapper className="section-center">
@@ -14,8 +15,8 @@ const Hero = () => {
     </article>
     
     <article className="img-container">
-      <img src='https://www.logisticsinsider.in/wp-content/uploads/2020/12/e-commerce.jpg' alt="nice table" className="main-img" />
-      <img src='https://www.foodbusinessnews.net/ext/resources/2022/08/23/SkuView_Lead.jpg?t=1661261146&width=1080' alt="person working" className="accent-img" />
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGUlMjBzaG9wcGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="nice table" className="main-img" />
+      {/* <img src="https://images.unsplash.com/photo-1592503254549-d83d24a4dfab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGUlMjBzaG9wcGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="person working" className="accent-img" /> */}
     </article>
   </Wrapper>
 }
@@ -34,12 +35,8 @@ const Wrapper = styled.section`
     margin-bottom: 2rem;
     color: var(--clr-grey-5);
     font-size: 1rem;
-    //animation: typing 10s  forwards;
   }
-  //@keyframes typing{
-  //   from {width: 0}
-  //  to { width: 100%}
-  //}
+  
   @media (min-width: 992px) {
     height: calc(100vh - 5rem);
     grid-template-columns: 1fr 1fr;
@@ -48,7 +45,6 @@ const Wrapper = styled.section`
       margin-bottom: 2rem;
     }
     p {
-      
       font-size: 1.25rem;
     }
     .hero-btn {

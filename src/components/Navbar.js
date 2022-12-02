@@ -3,17 +3,48 @@ import styled from 'styled-components';
 import logo from '../assets/logo.png';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
+import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import { links } from '../utils/constants';
 import CartButtons from './CartButtons';
 import { useProductsContext } from '../context/products_context';
 import { useUserContext } from '../context/user_context';
+import Sidebar from './Sidebar';
+
 
 const Nav = () => {
   const { openSidebar } = useProductsContext();
   const { myUser } = useUserContext();
 
+
+  const links_hk = [
+    {
+        id: 1,
+        text: 'home',
+        url: '/',
+    },
+    {
+        id: 2,
+        text: 'products',
+        url: '/products',
+        
+    },
+    {
+        id: 3,
+        text: 'about',
+        url: '/about',
+        
+    },
+      {
+          id:4,
+          text:'add product',
+          url:'/addproduct',
+      }
+]
+
   return (
       <NavContainer>
+      <Sidebar/>
         <div className='nav-center'>
           <div className='nav-header'>
             <Link to='/'>
@@ -22,9 +53,10 @@ const Nav = () => {
             <button type='button' className='nav-toggle' onClick={openSidebar}>
               <FaBars />
             </button>
+
           </div>
           <ul className='nav-links'>
-            {links.map((link) => {
+            {links_hk.map((link) => {
               const { id, text, url } = link;
               return (
                   <li key={id}>
@@ -32,6 +64,7 @@ const Nav = () => {
                   </li>
               );
             })}
+
             {myUser && (
                 <li>
                   <Link to='/checkout'>checkout</Link>
@@ -39,10 +72,17 @@ const Nav = () => {
             )}
           </ul>
           <CartButtons />
+          {/* <div className="cartbutton">
+            <Link to='/cart'><h4 className="cartbutton"><ShoppingCartRoundedIcon/>Cart</h4></Link>
+            <Link to='/login'><h4 className="cartbutton"><LoginRoundedIcon/>Login</h4></Link>
+          </div> */}
         </div>
       </NavContainer>
   );
 };
+
+
+
 
 const NavContainer = styled.nav`
   height: 5rem;
@@ -73,6 +113,7 @@ const NavContainer = styled.nav`
       font-size: 2rem;
     }
   }
+  
   .nav-links {
     display: none;
   }
@@ -82,6 +123,11 @@ const NavContainer = styled.nav`
   @media (min-width: 992px) {
     .nav-toggle {
       display: none;
+    }
+    .cartbutton{
+    display:flex;
+    width:6vw;
+    color:black;
     }
     .nav-center {
       display: grid;
@@ -101,8 +147,8 @@ const NavContainer = styled.nav`
         letter-spacing: var(--spacing);
         padding: 0.5rem;
         &:hover {
-          border-bottom: 1px solid var(--clr-primary-5);
-          border-top: 1px solid var(--clr-primary-5);
+          border-bottom: 1px solid var(--clr-primary-7);
+          border-top: 1px solid var(--clr-primary-7);
         }
       }
     }
