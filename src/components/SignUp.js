@@ -218,7 +218,7 @@ export default function SignUp() {
           <div className="box-root padding-top--24 flex-flex flex-direction--column fi1" >
             {/*style="flex-grow: 1; z-index: 9;"*/}
             <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-              <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Stackfindover</a></h1>
+              <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Sign Up</a></h1>
             </div>
             <div className="formbg-outer">
               <div className="formbg">
