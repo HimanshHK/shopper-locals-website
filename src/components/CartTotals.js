@@ -4,11 +4,30 @@ import { useCartContext } from '../context/cart_context';
 import { useUserContext } from '../context/user_context';
 import { formatPrice } from '../utils/helpers';
 import { Link } from 'react-router-dom';
+import StripeCheckout from 'react-stripe-checkout';
 
 const CartTotals = () => {
-    const { total_amount, shipping_fee } = useCartContext();
+    const { total_amount, shipping_fee, cart } = useCartContext();
     const { myUser, loinWithRedirect } = useUserContext();
 
+    function onToken(token){
+        console.log(token);
+    }
+
+   
+      const inputs = cart;
+      const setOrder = () => { 
+        return fetch('http://localhost:3001/orders', {
+          method: 'POST',
+          body: JSON.stringify(inputs),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+      };
+    
     return (
         <Wrapper>
             <div>
@@ -24,10 +43,19 @@ const CartTotals = () => {
                         order total : <span>{formatPrice(total_amount + shipping_fee)}</span>
                     </h4>
                 </article>
-                
-                    <button className='btn' type='button'>
-                        <Link to="/login" className='hk'>login</Link>
+           
+                    <StripeCheckout
+                    name="Shopper Locals Store"
+                    amount={(total_amount + shipping_fee)*100}
+                    currency="INR"
+                      token={onToken}
+                      stripeKey="pk_test_51MBdYtSHqt13bUHuSugZS2VbDFbNFwLdglHgpb7umqF0FyhhaQSbyGv3br0HqUz92W69HUof8eahVBPlhHfwgg4u00x21secuO"
+                    >
+                    <button onClick={setOrder} className='btn' type='button'>
+                        <div className='hk'>Proceed to Pay</div>
                     </button>
+
+                    </StripeCheckout>
                 
             </div>
         </Wrapper>
