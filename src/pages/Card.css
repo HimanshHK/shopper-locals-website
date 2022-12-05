@@ -1,0 +1,26 @@
+.main{
+    height: 200px;
+    width:250px;
+    border-color: skyblue;
+    border-radius: 30px;
+    border-width: 10px;
+    border-style: solid;
+    display: grid;
+    place-items: center;
+    /* padding:100px 100px 100px 100px; */
+    margin:20px 20px; 
+
+
+}
+.profile{
+    margin:50px 50px;
+
+}
+
+.support{
+    margin:50px 50px;
+
+}
+.query{
+    margin-top:50px;
+}
