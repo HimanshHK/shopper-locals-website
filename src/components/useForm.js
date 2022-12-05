@@ -2,6 +2,8 @@ import  { useState } from 'react'
 import {omit} from 'lodash'
 import {useHistory} from "react-router-dom";
 
+let pass
+
 const useForm = (callback) => {
     const [valuesss , setVals]= useState([]);
     //Form values
@@ -9,11 +11,11 @@ const useForm = (callback) => {
     //Errors
     const [errors, setErrors] = useState({});
     const history=useHistory();
-
+    
 
     const validate = (event, name, value) => {
         //A function to validate each input values
-
+        
         switch (name) {
             case 'name':
                 if(!value){
@@ -67,6 +69,7 @@ const useForm = (callback) => {
                 break;
 
             case 'password':
+                pass = value
                 if(
                     !new RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/).test(value)
                 ){
@@ -81,7 +84,59 @@ const useForm = (callback) => {
 
                 }
                 break;
+                case 'address':
+                if(!value){
+                    // we will set the error state
 
+                    setErrors({
+                        ...errors,
+                        address:'*Address is required'
+                    })
+                }else{
+                    // set the error state empty or remove the error for username input
+
+                    //omit function removes/omits the value from given object and returns a new object
+                    let newObj = omit(errors, "address");
+                    setErrors(newObj);
+
+                }
+                break;
+
+                case 'pincode':
+                if(!value){
+                    // we will set the error state
+
+                    setErrors({
+                        ...errors,
+                        pincode:'*Pincode is required'
+                    })
+                }else{
+                    // set the error state empty or remove the error for username input
+
+                    //omit function removes/omits the value from given object and returns a new object
+                    let newObj = omit(errors, "pincode");
+                    setErrors(newObj);
+
+                }
+                break;
+
+                case 'confirmPassword':
+                if(value !== pass){
+                    // we will set the error state
+
+                    setErrors({
+                        ...errors,
+                        confirmPassword:'Password does not match'
+                    })
+                }else{
+                    // set the error state empty or remove the error for username input
+
+                    //omit function removes/omits the value from given object and returns a new object
+                    let newObj = omit(errors, "confirmPassword");
+                    setErrors(newObj);
+
+                }
+                break;
 
             default:
                 break;

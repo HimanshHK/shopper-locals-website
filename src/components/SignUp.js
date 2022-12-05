@@ -218,22 +218,22 @@ export default function SignUp() {
           <div className="box-root padding-top--24 flex-flex flex-direction--column fi1" >
             {/*style="flex-grow: 1; z-index: 9;"*/}
             <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-              <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Stackfindover</a></h1>
+              <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Sign Up</a></h1>
             </div>
             <div className="formbg-outer">
               <div className="formbg">
                 <div className="formbg-inner padding-horizontal--48">
-                  <span className="padding-bottom--15">Sign in to your account</span>
+                  <span className="padding-bottom--15">Register an account</span>
                   <form id="stripe-login" onSubmit={handleSubmit}>
                     <div className="field padding-bottom--24">
-                      <label htmlFor="email">Name</label>
+                      <label htmlFor="name">Name</label>
                       <input type="text" name="name" onChange={handleChange}/>
                     </div>
                     {
                         errors.name && <h3 className='error'>{errors.name}</h3>
                     }
                     <div className="field padding-bottom--24">
-                      <label htmlFor="">Mobile No</label>
+                      <label htmlFor="phone">Mobile No</label>
                       <input type="phone" name="mobile" onChange={handleChange}/>
                     </div>
                     {
@@ -247,13 +247,19 @@ export default function SignUp() {
                         errors.email && <h3 className='error'>{errors.email}</h3>
                     }
                     <div className="field padding-bottom--24">
-                      <label htmlFor="email">Address</label>
+                      <label htmlFor="address">Address</label>
                       <input type="text" name="address" onChange={handleChange}/>
                     </div>
+                    {
+                      errors.address && <h3 className='error'>{errors.address}</h3>
+                    }
                     <div className="field padding-bottom--24">
-                      <label htmlFor="email">Pin-code</label>
-                      <input type="text" name="address" onChange={handleChange}/>
+                      <label htmlFor="pincode">Pin-code</label>
+                      <input type="text" name="pincode" onChange={handleChange}/>
                     </div>
+                    {
+                      errors.pincode && <h3 className='error'>{errors.pincode}</h3>
+                    }
                     <div className="field padding-bottom--24">
                     <select name="lang" onChange={handleChange} className="option">
                       <option value="Buyer">Buyer</option>
@@ -272,6 +278,15 @@ export default function SignUp() {
                     </div>
                     {
                         errors.password && <h3 className='error'>{errors.password}</h3>
+                    }
+                    <div className="field padding-bottom--24">
+                      <div className="grid--50-50">
+                        <label htmlFor="password">Confirm Password</label>
+                      </div>
+                      <input type="confirmPassword" name="confirmPassword" onChange={handleChange}/>
+                    </div>
+                    {
+                        errors.confirmPassword && <h3 className='error'>{errors.confirmPassword}</h3>
                     }
                     <div className="field field-checkbox padding-bottom--24 flex-flex align-center">
                       <label htmlFor="checkbox">
