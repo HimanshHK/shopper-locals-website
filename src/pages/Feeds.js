@@ -16,7 +16,7 @@ const Feeds = () => {
                 console.log(response)
                 setData(response.data)
             })
-    })
+    },[data])
 
     return(
       
@@ -72,7 +72,7 @@ padding:10px;
   .test1 {
     display: flex;
     letter-spacing: 1px;
-    display: flex;
+    //display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -148,7 +148,7 @@ padding:10px;
   .name-user span {
     color: var(--clr-primary-6);
     font-size: 0.8rem;
-    font-style:bold;
+    //font-style:bold;
   }
 
 
