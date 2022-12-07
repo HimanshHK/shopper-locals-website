@@ -52,7 +52,7 @@ export default function Dashboard() {
          
       const arr=[]
 
-      for(let i=0;i<state.length;i++){
+      for(let i=1;i<state.length;i++){
         for(let j=0;j<data.length;j++){
           if(state[i].name===data[j][0].buyerName || state[i].name===data[j][0].sellerName){
             arr.push(data[j])

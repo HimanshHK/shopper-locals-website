@@ -37,7 +37,7 @@ export default function Dashboard() {
         <div className="img">
           <AccountCircleIcon style={{ width: '40px', height: '40px' }} />
         </div>
-        <div className="top-heading">The User</div>
+        <div className="top-heading">{localStorage.getItem('loggedIn')===null?"new user":localStorage.getItem('Name')}</div>
       </div>
       <hr className="hr" />
       <ul className="sidebar-list">
