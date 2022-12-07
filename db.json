@@ -132,6 +132,16 @@
       "password": "Himanshu123",
       "confirmPassword": "Himanshu123",
       "id": 1
+    },
+    {
+      "name": "himanshu",
+      "mobile": "9467234789",
+      "email": "himanshuhkofficial@gmail.com",
+      "address": "Sri city Chitoor",
+      "pincode": "517572",
+      "password": "Himanshu123",
+      "confirmPassword": "Himanshu123",
+      "id": 1
     }
   ],
   "feeds": [

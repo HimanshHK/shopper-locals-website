@@ -44,8 +44,10 @@ const CartButtons = () => {
           <span className="cart-container">
           <FaUserPlus /></span></Link>:<Link to="/dashboard" className="cart-btn">
           {localStorage.getItem('Name')}
-          <span className="cart-container"><FaUserPlus /></span></Link>}
-          <Button  onClick={localStorage.removeItem('loggedIn')}><span className="cart-container"><FaDoorOpen/></span></Button>
+          <span className="cart-container"><FaUserPlus /></span></Link>
+          }
+          <Button>
+          <span className="cart-container"><FaDoorOpen/></span></Button>
           </div>
         
         

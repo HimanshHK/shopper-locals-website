@@ -3,7 +3,7 @@ import { BrowserRouter as Router,Switch, Route } from 'react-router-dom';
 import { Navbar, Sidebar, Footer } from './components';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-
+import SignInAdmin from './components/SignInAdmin';
 
 import { Home, SingleProduct, Cart, Checkout, Error, About, Products, PrivateRoute, AuthWrapper,Dashboard,Profile,Orders,Support ,Admin} from './pages';
 import AddProduct from "./pages/AddProduct";
@@ -64,6 +64,9 @@ function App() {
           </Route>
           <Route exact path='/admin'>
             <Admin/>
+            </Route>
+            <Route exact path='/signadmin'>
+            <SignInAdmin/>
             </Route>
           <Route exact path='/products/:id' children={<SingleProduct />} />
           <Route exact path='/dashboard'><Dashboard/></Route>

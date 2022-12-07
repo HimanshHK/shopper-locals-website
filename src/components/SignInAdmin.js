@@ -19,8 +19,10 @@ import './Signup.css';
 import axios from 'axios';
 import { useEffect } from 'react';
 import Redux from 'react-redux';
-//import { createGlobalState } from 'react-hooks-global-state';
+import { inputBaseClasses } from '@mui/material';
 import { useHistory } from 'react-router-dom';
+//import { createGlobalState } from 'react-hooks-global-state';
+
 
 function Copyright(props) {
   return (
@@ -75,32 +77,28 @@ export default function SignUp() {
     //       }
     //   )      
     // },[userState])
-   const history = useHistory();
+    const history= useHistory();
   const handleSubmit = () => {
-      for(let i=0;i<data.length;i++){
-            if(blocked[i].input===inputs.email){
-                alert('You are blocked')
-                
-                return
-            } 
-      }
-      for(let i=0;i<data.length;i++){
+      
           
-          if(data[i].email===inputs.email){
-              
-              if(data[i].password===inputs.password){
-                localStorage.setItem('Name',data[i].name)
-                localStorage.setItem('Email',data[i].email)
-                localStorage.setItem('Address',data[i].address)
-                localStorage.setItem('Phone',data[i].phone)
-                localStorage.setItem('loggedIn',"true")
-                
+          if("shopper365@gmail.com"===inputs.email){
+              if("Hk453@123#"===inputs.password){
+                localStorage.setItem('loggedIn','true')
+                localStorage.setItem('Email',inputs.email)
+                localStorage.setItem('Name','Admin')
                 alert("Logged In Successfully");
-                history.push('/profile')
+                history.push('/admin');
               }
-              
-          }
-      }
+            }
+
+              else{
+                alert("Your Admin Credentials are wrong");
+              }
+
+             
+                
+          
+      
   }
 
   
@@ -114,7 +112,7 @@ export default function SignUp() {
           <div className="box-root padding-top--24 flex-flex flex-direction--column fi1" >
             {/*style="flex-grow: 1; z-index: 9;"*/}
             <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-              <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Sign In</a></h1>
+              <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Sign In As Admin</a></h1>
             </div>
             <div className="formbg-outer">
               <div className="formbg">
