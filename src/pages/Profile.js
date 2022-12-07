@@ -69,7 +69,7 @@ export default function Dashboard() {
           data.map((msg)=>(
             msg.map((msg1)=>(
               <> */}
-              <div className='profile'>
+              {/* <div className='profile'>
                 <h3>Himanshu HK</h3>
                 <h5>Type: Seller</h5>
                 <h5>Address:Opp. Dhanush Supermarket,Sri City Chitoor,104636</h5>
@@ -79,7 +79,7 @@ export default function Dashboard() {
                 <h5>Reviews: 100</h5>
                 <h5>Orders: 100</h5>
                 <></>
-                </div>
+                </div> */}
 
 
       {/* <Card sx={{ display: 'flex' }}>

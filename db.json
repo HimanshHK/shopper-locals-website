@@ -2,6 +2,10 @@
   "orders": [
     [
       {
+        "buyerName": "himanshu",
+        "sellerName": "kataria"
+      },
+      {
         "id": "staples01#fff",
         "name": "kasuri Methi",
         "color": "#fff",
@@ -16,12 +20,16 @@
         "color": "#fff",
         "amount": 2,
         "image": "https://www.jiomart.com/images/product/420x420/599991414/kiwi-green-jumbo-premium-imported-3-pc-approx-360-g-420-g-product-images-o599991414-p591778589-0-202207282047.jpg",
-        "price": 120,
+        "price": 220,
         "max": 24
       }
     ],
     [
       {
+        "buyerName": "himanshu",
+        "sellerName": "kataria"
+      },
+      {
         "id": "staples01#fff",
         "name": "kasuri Methi",
         "color": "#fff",
@@ -34,48 +42,71 @@
         "id": "recoAJYUCuEKxcPSr#fff",
         "name": "Kiwi Green 4pcs",
         "color": "#fff",
-        "amount": 2,
+        "amount": 1,
         "image": "https://www.jiomart.com/images/product/420x420/599991414/kiwi-green-jumbo-premium-imported-3-pc-approx-360-g-420-g-product-images-o599991414-p591778589-0-202207282047.jpg",
-        "price": 120,
+        "price": 150,
+        "max": 24
+      }
+    ],
+    [
+      {
+        "buyerName": "himanshu",
+        "sellerName": "kataria"
+      },
+      {
+        "id": "staples01#fff",
+        "name": "kasuri Methi",
+        "color": "#fff",
+        "amount": 3,
+        "image": "https://rukminim1.flixcart.com/image/832/832/kgv5x8w0/spice-masala/g/5/d/25-kasuri-methi-box-catch-whole-original-imafxyf4cwzxyrhq.jpeg?q=70",
+        "price": 60,
+        "max": 30
+      },
+      {
+        "id": "recoAJYUCuEKxcPSr#fff",
+        "name": "Kiwi Green 4pcs",
+        "color": "#fff",
+        "amount": 1,
+        "image": "https://www.jiomart.com/images/product/420x420/599991414/kiwi-green-jumbo-premium-imported-3-pc-approx-360-g-420-g-product-images-o599991414-p591778589-0-202207282047.jpg",
+        "price": 342,
+        "max": 24
+      }
+    ],
+    [
+      {
+        "buyerName": "himanshu",
+        "sellerName": "kataria"
+      },
+      {
+        "id": "staples01#fff",
+        "name": "kasuri Methi",
+        "color": "#fff",
+        "amount": 3,
+        "image": "https://rukminim1.flixcart.com/image/832/832/kgv5x8w0/spice-masala/g/5/d/25-kasuri-methi-box-catch-whole-original-imafxyf4cwzxyrhq.jpeg?q=70",
+        "price": 360,
+        "max": 30
+      },
+      {
+        "id": "recoAJYUCuEKxcPSr#fff",
+        "name": "Kiwi Green 4pcs",
+        "color": "#fff",
+        "amount": 1,
+        "image": "https://www.jiomart.com/images/product/420x420/599991414/kiwi-green-jumbo-premium-imported-3-pc-approx-360-g-420-g-product-images-o599991414-p591778589-0-202207282047.jpg",
+        "price": 1420,
         "max": 24
       }
     ]
   ],
   "users": [
     {
-      "name": "himanshuhk01",
+      "name": "himanshu",
       "mobile": "9467234789",
       "email": "himanshuhkofficial2@gmail.com",
-      "password": "123",
+      "address": "Sri city Chitoor",
+      "pincode": "517572",
+      "password": "Himanshu123",
+      "confirmPassword": "Himanshu123",
       "id": 1
-    },
-    {
-      "name": "hi_manshuhk",
-      "mobile": "9996575659",
-      "email": "himanshu.h20@iiits.in",
-      "password": "123",
-      "id": 2
-    },
-    {
-      "name": "shivam",
-      "mobile": "9966890065",
-      "email": "himanshuhkcoding@gmail.com",
-      "password": "1234",
-      "id": 3
-    },
-    {
-      "name": "hiamsnhuhk",
-      "mobile": "9878788797",
-      "email": "hk@gmail.com",
-      "password": "fgg",
-      "id": 4
-    },
-    {
-      "name": "himanshuhk01",
-      "mobile": "8834",
-      "email": "himanshuhkofficial2@gmail.com",
-      "password": "34",
-      "id": 5
     }
   ],
   "feeds": [

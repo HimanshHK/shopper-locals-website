@@ -16,13 +16,17 @@ import Typography from '@mui/material/Typography';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
-
+import { CardActionArea } from '@mui/material';
+import { validateYupSchema } from 'formik';
+// import {userState} from '../components/index.js'
 
 
 export default function Dashboard() {
  
   const [data,setData]=useState([]);
-  
+  const [state,setState]=useState("");
+  const [state1,setState1]=useState([]);
+  const [final,setFinal]=useState({name:"",total:"",items:[]});
   useEffect(()=>{
     axios.get('http://localhost:3001/orders')
         .then(response => {
@@ -30,6 +34,55 @@ export default function Dashboard() {
             setData(response.data)
         })
    },[])
+
+   function loadData(){
+      axios.get('http://localhost:3001/orders')
+          .then(response => {
+              // console.log(response.data)
+              setData(response.data)
+          })
+
+      
+      axios.get('http://localhost:3001/users')
+          .then(response => {
+              // console.log(response.data)
+              setState(response.data)
+          })
+         
+      const arr=[]
+
+      for(let i=0;i<state.length;i++){
+        for(let j=0;j<data.length;j++){
+          if(state[i].name===data[j][0].buyerName || state[i].name===data[j][0].sellerName){
+            arr.push(data[j])
+          }
+        }
+      }
+      // console.log(arr)
+      setState1(arr)
+      // console.log(state1);
+ 
+      
+
+
+   }
+
+  //  function storeData(item){
+  //   final.name=item[0].buyerName;
+  //   const sum=0;
+  //   const arr=[]
+  //   for(let i=1;i<item.length;i++){
+  //     arr.push(item[i]);
+  //     // sum+=item[i].price;
+  //   }
+
+
+  //   const val={name:item[0].buyerName,total:sum,items:arr}
+  //   setFinal(val)
+  //     console.log(val)
+
+  //  }
+
   return (
     <div className="divid">
     <div className="sidebar">
@@ -62,45 +115,18 @@ export default function Dashboard() {
       </div>
     </div>
     
-    <div className="orders">
-      {console.log(data)}
-      <ul>
-         {/* {
-          data.map((msg)=>(
-            msg.map((msg1)=>(
-              <> */}
-              <Card/>
+    
+    <div className="orders" >
+    {/* <h1>{userState}</h1> */}
+    <button className="btn" onClick={loadData} >Show My Current Orders</button>
+     {
+          state1.map((item)=>{       
+            return(<Card item={item} />)
+          }
+        )
+     }
+     {/* <Card/> */}
 
-
-      {/* <Card sx={{ display: 'flex' }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-            {msg1.name}
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            {msg1.amount} Pieces
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            {msg1.price}RS
-          </Typography>
-        </CardContent>
-        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-             dispatched
-        </Box>
-      </Box>
-      <CardMedia
-        component="img"
-        sx={{ width: 150 }}
-        image={msg1.image}
-        alt="hai hi nhi"
-        />
-    </Card> */}
-              {/* </>
-            ))
-          ))
-         } */}
-        </ul>
     </div>
                 
     </div>

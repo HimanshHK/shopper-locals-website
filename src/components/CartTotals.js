@@ -14,8 +14,9 @@ const CartTotals = () => {
         console.log(token);
     }
 
-   
-      const inputs = cart;
+      let userName={buyerName:"himanshu",sellerName:"kataria"}
+      const inputs = [userName,...cart];
+      console.log();
       const setOrder = () => { 
         return fetch('http://localhost:3001/orders', {
           method: 'POST',

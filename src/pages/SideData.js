@@ -69,11 +69,11 @@ export const SideData = [
         icon:<PersonIcon/>,
         link:"/profile"
     },
-    {
-        title:"Orders",
-        icon:<RedeemIcon/>,
-        link:"/orders"
-    },
+    // {
+    //     title:"Orders",
+    //     icon:<RedeemIcon/>,
+    //     link:"/orders"
+    // },
     {
         title:"Support",
         icon:<ReceiptIcon/>,
