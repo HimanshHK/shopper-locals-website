@@ -11,6 +11,6 @@ import Dashboard from './Dashboard';
 import Profile from './Profile';
 import Orders from './Orders';
 import Support from './Support';
+import Admin from './Admin';
 
-
-export { Home, Products, SingleProduct, About, Cart, Error, Checkout, PrivateRoute, AuthWrapper,Dashboard,Profile,Orders,Support };
+export { Home, Products, SingleProduct, About, Cart, Error, Checkout, PrivateRoute, AuthWrapper,Dashboard,Profile,Orders,Support,Admin };

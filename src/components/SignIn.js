@@ -55,15 +55,45 @@ export default function SignUp() {
                 console.log(response)
                 setData(response.data)
             })
-    },[data])
+    },[])
+
+    const [blocked,setBloclked]=useState([]);
+    useEffect(()=>{
+        axios.get('http://localhost:3001/blocked')
+            .then(response => {
+                console.log(response)
+                setBloclked(response.data)
+
+            })
+    },[])
+
+    // useEffect(()=>{
+    //   //add data in db.json
+    //   axios.post('http://localhost:3001/login',{name:userState})
+    //       .then(response => {
+    //         console.log("Done!!")
+    //       }
+    //   )      
+    // },[userState])
    
   const handleSubmit = () => {
       for(let i=0;i<data.length;i++){
+            if(blocked[i].input===inputs.email){
+                alert('You are blocked')
+                return
+            } 
+      }
+      for(let i=0;i<data.length;i++){
+          
           if(data[i].email===inputs.email){
-              if(data[i].password===inputs.password){
-                  changeUserstate(data[i])
-                  alert("Login Successfull")
               
+              if(data[i].password===inputs.password){
+                localStorage.setItem('Name',data[i].name)
+                localStorage.setItem('Email',data[i].email)
+                localStorage.setItem('Address',data[i].address)
+                localStorage.setItem('Phone',data[i].phone)
+                localStorage.setItem('loggedIn',true)
+                alert("Logged In Successfully");
               }
               
           }

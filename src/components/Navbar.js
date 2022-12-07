@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaDoorOpen } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
@@ -58,6 +58,7 @@ const Nav = () => {
           <ul className='nav-links'>
             {links_hk.map((link) => {
               const { id, text, url } = link;
+              {/* if(localStorage.getItem()) */}
               return (
                   <li key={id}>
                     <Link to={url}>{text}</Link>
@@ -72,6 +73,7 @@ const Nav = () => {
             )}
           </ul>
           <CartButtons />
+          
           {/* <div className="cartbutton">
             <Link to='/cart'><h4 className="cartbutton"><ShoppingCartRoundedIcon/>Cart</h4></Link>
             <Link to='/login'><h4 className="cartbutton"><LoginRoundedIcon/>Login</h4></Link>

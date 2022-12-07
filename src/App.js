@@ -5,7 +5,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 
 
-import { Home, SingleProduct, Cart, Checkout, Error, About, Products, PrivateRoute, AuthWrapper,Dashboard,Profile,Orders,Support } from './pages';
+import { Home, SingleProduct, Cart, Checkout, Error, About, Products, PrivateRoute, AuthWrapper,Dashboard,Profile,Orders,Support ,Admin} from './pages';
 import AddProduct from "./pages/AddProduct";
 
 function App() {
@@ -62,7 +62,9 @@ function App() {
           <Route exact path='/support'>
             <Support/>
           </Route>
-
+          <Route exact path='/admin'>
+            <Admin/>
+            </Route>
           <Route exact path='/products/:id' children={<SingleProduct />} />
           <Route exact path='/dashboard'><Dashboard/></Route>
           

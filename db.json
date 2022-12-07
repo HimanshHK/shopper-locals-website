@@ -1,4 +1,19 @@
 {
+  "login": [
+    {
+      "name": {
+        "name": "himanshu",
+        "mobile": "9467234789",
+        "email": "himanshuhkofficial2@gmail.com",
+        "address": "Sri city Chitoor",
+        "pincode": "517572",
+        "password": "Himanshu123",
+        "confirmPassword": "Himanshu123",
+        "id": 1
+      },
+      "id": 1
+    }
+  ],
   "orders": [
     [
       {
@@ -96,6 +111,16 @@
         "max": 24
       }
     ]
+  ],
+  "blocked": [
+    {
+      "input": "himanshu.h20@gmail.com",
+      "id": 2
+    },
+    {
+      "input": "jhsehcjdchs",
+      "id": 3
+    }
   ],
   "users": [
     {

@@ -1,10 +1,11 @@
 import React from 'react';
-import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa';
+import { FaShoppingCart, FaUserMinus, FaUserPlus,FaDoorOpen } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useProductsContext } from '../context/products_context';
 import { useCartContext } from '../context/cart_context';
 import { useUserContext } from '../context/user_context';
+import { Button } from '@mui/material';
 // import Modal from './login/Modal'
 
 const CartButtons = () => {
@@ -37,13 +38,17 @@ const CartButtons = () => {
               Login <FaUserPlus />
             </button>
         )} */}
-        <Link to="/login" className="cart-btn">
+        <div className='new'>
+        {(localStorage.getItem('loggedIn')===null)?<Link to="/login" className="cart-btn">
           Login
           <span className="cart-container">
-          <FaUserPlus />
-          
-        </span>
-        </Link>
+          <FaUserPlus /></span></Link>:<Link to="/dashboard" className="cart-btn">
+          {localStorage.getItem('Name')}
+          <span className="cart-container"><FaUserPlus /></span></Link>}
+          <Button  onClick={localStorage.removeItem('loggedIn')}><span className="cart-container"><FaDoorOpen/></span></Button>
+          </div>
+        
+        
 
 
       </Wrapper>
@@ -55,7 +60,10 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   width: 225px;
-
+   .new{
+    margin-left: 10px;
+    display: flex;
+   }
   .cart-btn {
     color: var(--clr-grey-1);
     font-size: 1.5rem;

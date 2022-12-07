@@ -16,6 +16,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useFormik, Formik } from 'formik'
 import './Signup.css';
+import { Radio } from '@mui/material';
 
 function Copyright(props) {
   return (
@@ -96,12 +97,11 @@ export default function SignUp() {
                     {
                       errors.pincode && <h3 className='error'>{errors.pincode}</h3>
                     }
-                    <div className="field padding-bottom--24">
-                    <select name="lang" onChange={handleChange} className="option">
-                      <option value="Buyer">Buyer</option>
-                      <option value="Seller">Seller</option>
-
-                    </select>
+                    <div className="field padding-bottom--24" onChange={handleChange}>
+                    <input type="radio" id="html" name="fav_language" value="Seller"/>
+                    <label >Seller</label><br/>
+                    <input type="radio" id="css" name="fav_language" value="Buyer"/>
+                    <label >Buyer</label>
                     </div>
                     <div className="field padding-bottom--24">
                       <div className="grid--50-50">
