@@ -57,12 +57,12 @@ export default function SignUp() {
             })
     },[])
 
-    const [blocked,setBloclked]=useState([]);
+    const [blocked,setBlocked]=useState([]);
     useEffect(()=>{
         axios.get('http://localhost:3001/blocked')
             .then(response => {
                 console.log(response)
-                setBloclked(response.data)
+                setBlocked(response.data)
 
             })
     },[])
@@ -77,13 +77,14 @@ export default function SignUp() {
     // },[userState])
    const history = useHistory();
   const handleSubmit = () => {
-      for(let i=0;i<data.length;i++){
+    
+      for(let i=0;i<blocked.length;i++){
             if(blocked[i].input===inputs.email){
-                alert('You are blocked')
-                
+                alert('You are blocked')      
                 return
             } 
       }
+      
       for(let i=0;i<data.length;i++){
           
           if(data[i].email===inputs.email){
@@ -97,10 +98,15 @@ export default function SignUp() {
                 
                 alert("Logged In Successfully");
                 history.push('/profile')
+                return
               }
-              
+              else{
+                alert("Invalid Credentials");
+              }
           }
+          
       }
+      alert("Invalid Credentials");
   }
 
   

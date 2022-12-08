@@ -12,8 +12,10 @@ const SingleProductPage = () => {
   // const history = useHistory();
   const { single_product_loading: loading, single_product_error: error, single_product: product, fetchSingleProduct } = useProductsContext();
 
+  
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    console.log('ha ha');
   }, [id]);
 
   // useEffect(() => {
@@ -46,6 +48,7 @@ const SingleProductPage = () => {
             <section className='content'>
               <h2>{name}</h2>
               <Stars stars={(Math.random() * 5)+1} reviews={Math.floor(Math.random()*200)+1} />
+              
               <h5 className='price'>{formatPrice(price)}</h5>
               <p className='desc display-linebreak'>{description}</p>
               <p className='info'>

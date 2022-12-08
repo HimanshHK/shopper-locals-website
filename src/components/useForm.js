@@ -171,6 +171,7 @@ const useForm = (callback) => {
         }else{
             alert("Please Enter all details correctly!");
         }
+        
         fetch('http://localhost:3001/users', {
             method: 'POST',
             body: JSON.stringify(values),
