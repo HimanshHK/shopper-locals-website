@@ -72,9 +72,8 @@ export default function Dashboard() {
               <div className='support'>
                 <h3>Stay Connected</h3>
                 <h5 >For More information, you can connect our Chief Engineer</h5>
-                <h4 className='query'>Mr. Talwar Veera </h4>
+                <h4 >Mr. Talwar Veera </h4>
                 <h4>  <CallIcon/> 9876543210</h4> 
-                <h3 className='query'>Your Queries will be ansewered 24X7.</h3>
 
               </div>
             

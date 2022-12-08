@@ -46,12 +46,14 @@ const CartButtons = () => {
           {localStorage.getItem('Name')}
           <span className="cart-container"><FaUserPlus /></span></Link>
           }
+          <Link to="/login" >
           <Button>
           <span className="cart-container"><FaDoorOpen/></span></Button>
+          </Link>
           </div>
         
         
-
+          
 
       </Wrapper>
   );

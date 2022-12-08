@@ -39,16 +39,19 @@
         "max": 24
       }
     ]
-    
   ],
   "blocked": [
     {
-      "input": "himanshu.h20@gmail.com",
+      "input": "himanshuhkofficial2@gmail.com",
       "id": 2
     },
     {
-      "input": "jhsehcjdchs",
+      "input": "Mohitsharma@gmail.com",
       "id": 3
+    },
+    {
+      "input": "Sachin202@gmail.com",
+      "id": 5
     }
   ],
   "users": [
@@ -71,6 +74,17 @@
       "password": "Himanshu123",
       "confirmPassword": "Himanshu123",
       "id": 1
+    },
+    {
+      "name": "Sachin",
+      "mobile": "8824094063",
+      "email": "guest@guest.com",
+      "address": "Sri city",
+      "fav_language": "Buyer",
+      "pincode": "517572",
+      "password": "Sachin123",
+      "confirmPassword": "Sachin123",
+      "id": 2
     }
   ],
   "feeds": [

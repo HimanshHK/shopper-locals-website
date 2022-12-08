@@ -53,7 +53,7 @@ const CartTotals = () => {
                       stripeKey="pk_test_51MBdYtSHqt13bUHuSugZS2VbDFbNFwLdglHgpb7umqF0FyhhaQSbyGv3br0HqUz92W69HUof8eahVBPlhHfwgg4u00x21secuO"
                     >
                     <button onClick={setOrder} className='btn' type='button'>
-                        <div className='hk'>Proceed to Pay</div>
+                        <div >Proceed to Pay</div>
                     </button>
 
                     </StripeCheckout>
@@ -89,13 +89,17 @@ const Wrapper = styled.section`
   }
   .hk{
     color:white;
+    background-color: #ff6f61;
+    padding: 1rem 1rem 1rem 1rem;
+
   }
-  .btn {
+  .btn{
     width: 100%;
     margin-top: 1rem;
     text-align: center;
     font-weight: 700;
     color:white;
+    background-color:hsl(22, 31%, 52%) ;
   }
 `;
 

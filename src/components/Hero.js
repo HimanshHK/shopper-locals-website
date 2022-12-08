@@ -48,8 +48,9 @@ const Wrapper = styled.section`
       font-size: 1.25rem;
     }
     .hero-btn {
-      padding: 0.75rem 1.5rem;
+      padding: 0.5rem 1.5rem 2.0rem 1.5rem;
       font-size: 1rem;
+
     }
     .img-container {
       display: block;

@@ -65,7 +65,7 @@ export default function Dashboard() {
     <div className='profile'>
       <h3>Name  :  {localStorage.getItem("Name")}</h3>
       <h5>Email :{localStorage.getItem("Email")}</h5>
-      <h5>Phone :{localStorage.getItem("Phone")}</h5>
+      <h5>Phone :9991375659</h5>
       <h5>Address :{localStorage.getItem("Address")}</h5>
       </div>
     <div className="orders">

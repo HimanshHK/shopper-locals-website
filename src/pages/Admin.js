@@ -180,34 +180,25 @@ export default function Dashboard() {
       </div>
     </div>
     
-    
-    <div className="orders" >
-    {/* <h1>{userState}</h1> */}
-    <button className="btn" onClick={loadData} >Show My Current Orders</button>
-     {
-          state1.map((item)=>{       
-            return(<Card item={item} />)
-          }
-        )
-     }
-     {/* <Card/> */}
-     
-    </div>
     <div className='users'>
     <form onSubmit={blockData}>
-    <input name="block"  value={input} onChange={e=>setInput(e.target.value)}/>
-    {/* <input name='submit' type='submit' value='Block'/> */}
-    <button className="btn" type="submit" >Block Users</button>
+    <div className="bhk">
+    <input name="block" className="blockfld"  value={input} onChange={e=>setInput(e.target.value)}/>
+    
+    <button className="btn" type="submit" >Block</button>
+    </div>
     </form>
     <button className="btn" onClick={loadData} >Blocked users</button>
+    <div className="blkdiv">
      {
           value.map((item)=>{
             return(
-                <h1>{item.input}</h1>
+               <h5 className="blkfld">{item.input}</h5>
             )
           }
           )
      }
+     </div>
 
      {/* <form onSubmit={deleteData}>
     <input name="block2"  value={input2} onChange={e=>setInput2(e.target.value)}/>
@@ -219,6 +210,20 @@ export default function Dashboard() {
 
 
     </div>
+    
+    <div className="orders" >
+    {/* <h1>{userState}</h1> */}
+    {/* <button className="btn admin" onClick={loadData} >Show Current Blocked Users</button>
+     {
+          state1.map((item)=>{       
+            return(<Card item={item} />)
+          }
+        )
+     } */}
+     {/* <Card/> */}
+     
+    </div>
+    
                 
     </div>
   );

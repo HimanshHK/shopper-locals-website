@@ -93,12 +93,7 @@ export default function SignUp() {
 
               else{
                 alert("Your Admin Credentials are wrong");
-              }
-
-             
-                
-          
-      
+              } 
   }
 
   
